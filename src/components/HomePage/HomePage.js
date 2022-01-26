@@ -6,21 +6,23 @@ import themoviedb, { requestSearch } from "../../api/themoviedb"
 
 const HomePage = () => {
 
-    const[searchResults,setSearchResults] = useState([]);
-    const onSearchSubmit = async(term)=>{
-        const results =await requestSearch(term,1);
-         setSearchResults(results);
-    }
-    useEffect(()=>{
-        console.log(searchResults);
-    },[searchResults])
+  const [searchResults, setSearchResults] = useState([]);
+  const onSearchSubmit = async (term) => {
+    setSearchResults([]);
+    const results = await requestSearch(term, 1);
+    setSearchResults(results);
+  }
+  useEffect(() => {
+    console.log(searchResults);
 
-    return (
-        <div className="container">
-            <Header onSubmit={onSearchSubmit} />
-            <MovieList list={searchResults}/>
-        </div>
-    );
+  }, [searchResults])
+
+  return (
+    <div className="container">
+      <Header onSubmit={onSearchSubmit} />
+      <MovieList list={searchResults} />
+    </div>
+  );
 }
 
 export default HomePage;

@@ -1,6 +1,6 @@
 .flex-container{
     display: flex;
-    border: 1px solid rgb(219, 219, 219);
+    border: 0px solid rgb(253, 253, 253);
     border-radius: 5px;
     margin: 20px 0;
     background-color: rgb(83, 83, 83);
@@ -46,12 +46,14 @@
      padding: 20px;
 } 
 
-.zoom:hover{
-    transform: scale(1.1);
-}
-.zoom{
+/* .zoom:hover{
+    transform: scale(1.5); 
+     border: 3px solid #fdfdfd;
+
+} */
+/* .zoom{
     transition: transform .3s;
-}
+} */
 .description{
     white-space: nowrap;
   overflow: hidden;
