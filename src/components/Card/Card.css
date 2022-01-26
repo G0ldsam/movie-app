@@ -1,0 +1,60 @@
+.flex-container{
+    display: flex;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    margin: 20px 0;
+    background-color: rgb(83, 83, 83);
+    align-items: center;
+  justify-content: center;
+  object-fit: fill;
+    
+}
+
+.flex-container>div{
+    
+    /* margin: 20px;  */
+    /* padding: 20px; */
+    font-size: 20px;
+    width: 450px;
+    height: 320px;
+    color:white;
+    
+}
+
+
+.details-header{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.imageFit{
+    object-fit:cover;
+    width:100%;
+    height: 100%;
+}
+.words{
+    overflow-wrap: break-word;
+    word-spacing: 6px;
+}
+
+/* .image{
+    display: inline-block;
+} */
+.content{
+    display: inline-block;
+    /* margin: 20px;  */
+     padding: 20px;
+} 
+
+.zoom:hover{
+    transform: scale(1.1);
+}
+.zoom{
+    transition: transform .3s;
+}
+.description{
+    white-space: nowrap;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  height: 50px;
+}

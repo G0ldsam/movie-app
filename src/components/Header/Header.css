@@ -1,0 +1,24 @@
+.menuColor{
+    background-color: rgb(71, 71, 71);
+    padding: 12px;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.searchBar{
+    padding: 8px 50px;
+    border-radius: 15px;
+    position: relative;
+    background-color: rgb(160, 160, 160);
+    border: 1px solid rgb(98, 98, 98)
+    
+
+}
+
+
+.dimension{
+    width: 300px;
+    margin: 0 auto;
+}
