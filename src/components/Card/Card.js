@@ -4,6 +4,7 @@ import defaultImage from "../../images/default.PNG";
 import { motion } from "framer-motion";
 import { MovieContext } from './../../Contexts/MovieContext';
 import { NavLink } from "react-router-dom";
+import { listVariant, fadeInVariant, pulseVariant } from "./../../styleVariants/variants"
 
 
 const Card = ({ id, image, date, title, description, index, length, rate }) => {
@@ -26,46 +27,7 @@ const Card = ({ id, image, date, title, description, index, length, rate }) => {
     }
   }, [count])
 
-  const pulseVariant = {
-    pulse: () => ({
-      scale: [1, 1.08, 1.05, 1, 1.08, 1],
-      color: ["#ffffff", "#fff8bb", "#fff06a", "#ffffff"],
-      transition: {
-        duration: 1.2
-      }
-    }),
-    still: {
-      scale: 1
-    }
-  }
 
-  const listVariant = {
-    hidden: {
-      x: 10000,
-      opacity: 0
-
-    },
-    visible: (custom) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: custom * 0.2,
-        duration: 1
-      }
-    })
-  }
-
-  const fadeInVariant = {
-    hidden: {
-      opacity: 0
-    },
-    fadeIn: {
-      opacity: 1,
-      transition: {
-        duration: 1
-      }
-    }
-  }
   return (
 
     <motion.div
