@@ -1,12 +1,12 @@
 .flex-container{
     display: flex;
     border: 0px solid rgb(253, 253, 253);
-    border-radius: 5px;
+    border-radius: 18px;
     margin: 20px 0;
     background-color: rgb(83, 83, 83);
     align-items: center;
-  justify-content: center;
-  object-fit: fill;
+    justify-content: center;
+    object-fit: fill;
     
 }
 
@@ -14,23 +14,35 @@
     
     /* margin: 20px;  */
     /* padding: 20px; */
-    font-size: 20px;
+    /* font-size: 10px; */
     width: 450px;
     height: 320px;
     color:white;
     
 }
 
-
+.details{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
 .details-header{
     font-size: 40px;
+    line-height: 1.2em;
     color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.details-header:hover{
+    color: rgb(73, 0, 0);
 }
 
 .imageFit{
     object-fit:cover;
     width:100%;
     height: 100%;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
 }
 .words{
     overflow-wrap: break-word;
@@ -57,6 +69,8 @@
 .description{
     white-space: nowrap;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
   height: 50px;
+  font-size: 20px;
 }
+

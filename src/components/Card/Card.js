@@ -1,39 +1,39 @@
 import "./Card.css"
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import defaultImage from "../../images/default.PNG";
 import { motion } from "framer-motion";
+import { MovieContext } from './../../Contexts/MovieContext';
+import { NavLink } from "react-router-dom";
 
-const Card = ({ key, image, date, title, description, index, length }) => {
+
+// const path =`https://image.tmdb.org/t/p/w500`+image;
+
+const Card = ({ id, image, date, title, description, index, length }) => {
   const path = image ? `https://image.tmdb.org/t/p/w500` + image : defaultImage;
-  // const path =`https://image.tmdb.org/t/p/w500`+image;
   const [FadeIn, setFadeIn] = useState(false);
-  const [Pulse, setPulse] = useState(false);
-  const [Count, setCount] = useState(0);
 
-  var count = 0;
-  const animationEnd = (index) => {
-    setFadeIn(true)
-    count = count + 1;
-    if (count == length) {
-      console.log("here");
-      setPulse(true)
-      console.log(Pulse)
-    }
-    else {
-      console.log(count)
-      setPulse(false)
-    }
+  const { count, setCount, setPulse, Pulse } = useContext(MovieContext);
+
+  const animationEnd = () => {
+    setFadeIn(true);
+    console.log(id);
+    setCount(prev => prev + 1);
   }
 
-  const pulseVariant = {
-    pulse: (timer) => ({
-      scale: [1, 1.05, 1.05, 1, 1, 1],
-      transition: {
-        duration: 1,
-        delay: timer * (length * 0.2)
-      },
-      fontWeight: 'bold'
+  useEffect(() => {
+    if (count == length) {
+      setPulse(true);
+      setCount(0);
+    }
+  }, [count])
 
+  const pulseVariant = {
+    pulse: () => ({
+      scale: [1, 1.08, 1.05, 1, 1.08, 1],
+      color: ["#ffffff", "#fff8bb", "#fff06a", "#ffffff"],
+      transition: {
+        duration: 1.2
+      }
     }),
     still: {
       scale: 1
@@ -70,38 +70,40 @@ const Card = ({ key, image, date, title, description, index, length }) => {
   return (
 
     <motion.div
-      className="flex-container"
-      key={key}
-      variants={listVariant}
-      animate="visible"
-      initial="hidden"
-      custom={index}
-      onAnimationComplete={() => animationEnd(index)}
       whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
-    // , borderColor: "#fdfdfd", borderWidth: 3
     >
       <motion.div
-        className="image"
-        variants={fadeInVariant}
+        className="flex-container"
+        variants={listVariant}
+        animate="visible"
         initial="hidden"
-        animate={FadeIn ? "fadeIn" : "hidden"}
-      // onAnimationComplete={() => setFadeIn(false)}
+        custom={index}
+        onAnimationComplete={() => animationEnd()}
       >
-        <img src={path} className="imageFit" />
+        <motion.div
+          className="image"
+          variants={fadeInVariant}
+          initial="hidden"
+          animate={FadeIn ? "fadeIn" : "hidden"}
+        // onAnimationComplete={() => setFadeIn(false)}
+        >
+          <img src={path} className="imageFit" />
+        </motion.div>
+        <div className="content">
+          <p><NavLink to={`movie/${id}`} className="header  details-header words">{title}</NavLink></p>
+          <div className="details">
+            <motion.div
+
+              variants={pulseVariant}
+              animate={Pulse ? "pulse" : "still"}
+              onAnimationComplete={() => setPulse(false)}
+            >Release Date: {date}</motion.div>
+          </div>
+          <div className="description">
+            <p>{description}</p>
+          </div>
+        </div>
       </motion.div>
-      <div className="content">
-        <p><a className="header  details-header words">{title}</a></p>
-        <div className="date details">
-          <motion.div
-            className="date"
-            variants={pulseVariant}
-            animate={Pulse ? "pulse" : "still"}
-          >Release Date: {date}</motion.div>
-        </div>
-        <div className="description">
-          <p>{description}</p>
-        </div>
-      </div>
     </motion.div>
   );
 }

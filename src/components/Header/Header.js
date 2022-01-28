@@ -1,20 +1,22 @@
-import react,{useState} from "react";
+import React, { useState } from "react";
 import "./Header.css"
+import { useNavigate } from "react-router-dom";
 
-const Header = ({onSubmit}) => {
+const Header = ({ onSubmit }) => {
+    let navigate = useNavigate();
+    const [term, setTerm] = useState('');
 
-    const [term,setTerm] = useState('');
-
-    const searchMovies=(searchValue)=>{
+    const searchMovies = (searchValue) => {
         setTerm(searchValue)
     }
 
-    const onFormSubmit = (event) =>{
+    const onFormSubmit = (event) => {
         event.preventDefault();
         onSubmit(term);
+        navigate("/")
     }
 
-    return(
+    return (
         <div className="ui menuColor ">
 
             <div className="dimension ">
@@ -23,8 +25,8 @@ const Header = ({onSubmit}) => {
                         <i className="search icon"></i>
                         <input
                             type="text"
-                            placeholder="Search"
-                            onChange={(e)=>searchMovies(e.target.value)}
+                            placeholder="Search Movie"
+                            onChange={(e) => searchMovies(e.target.value)}
                             className="searchBar"
                         />
                     </form>

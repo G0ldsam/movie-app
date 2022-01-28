@@ -3,6 +3,8 @@ import MovieList from "../MovieList/MovieList";
 import Header from "../Header/Header";
 import "./HomePage.css"
 import themoviedb, { requestSearch } from "../../api/themoviedb"
+import { BrowserRouter as Router, Navigate, Route, Routes, Link, useParams } from "react-router-dom"
+import Movie from "../Movie/Movie";
 
 const HomePage = () => {
 
@@ -12,18 +14,24 @@ const HomePage = () => {
     const results = await requestSearch(term, 1);
     setSearchResults(results);
   }
-  useEffect(() => {
-    console.log(searchResults);
+  // useEffect(() => {
+  //   console.log(searchResults);
 
-  }, [searchResults])
+  // }, [searchResults])
 
   return (
-    <div className="container">
-      <Header onSubmit={onSearchSubmit} />
-      <MovieList list={searchResults} />
-    </div>
+    <Router>
+
+      <div className="container">
+        <Header onSubmit={onSearchSubmit} />
+        <Routes>
+          <Route exact path="/" element={<MovieList list={searchResults} />} />
+          <Route exact path="/movie/:id" element={<Movie />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
+{/* <Navigate replace to="/" /> */ }
 export default HomePage;
 
