@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Header.css"
 import { useNavigate } from "react-router-dom";
 import logo from "../../images/movie-logo.png"
+import { NavLink } from "react-router-dom";
 
 const Header = ({ onSubmit }) => {
     let navigate = useNavigate();
@@ -20,7 +21,7 @@ const Header = ({ onSubmit }) => {
     return (
         <div className=" menuColor ">
             <div className="logotext">
-                <img className="header item logo" src={logo} />
+                <NavLink to="/"><img className="header item logo" src={logo} /></NavLink>
             </div>
             <div className="dimension ">
                 <div className="ui transparent inverted input">
