@@ -11,14 +11,9 @@
 }
 
 .flex-container>div{
-    
-    /* margin: 20px;  */
-    /* padding: 20px; */
-    /* font-size: 10px; */
     width: 450px;
     height: 320px;
     color:white;
-    
 }
 
 .details{
@@ -51,7 +46,6 @@
 
 .content{
     display: inline-block;
-    /* margin: 20px;  */
      padding: 20px;
 } 
 
@@ -61,14 +55,11 @@
     color: rgb(0, 197, 197);
 }
 .description{
-    /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 90px;
   font-size: 20px;
   word-wrap: break-word;
-  /* display: -webkit-box; */
   line-clamp: 3;
-
 }
 

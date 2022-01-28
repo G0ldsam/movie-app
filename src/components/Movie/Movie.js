@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { requestMovie } from '../../api/themoviedb';
 import defaultImage from "../../images/default.PNG";
 import './Movie.css'
-// import {browser}
 
 const Movie = () => {
 
@@ -15,7 +14,6 @@ const Movie = () => {
     const getMovie = async () => {
       const results = await requestMovie(`${id}`);
       setMovie(results);
-      console.log(results);
       if (results.data.backdrop_path) {
         setPath(`https://image.tmdb.org/t/p/w1280` + results.data.backdrop_path);
       }

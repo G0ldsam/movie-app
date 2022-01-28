@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: center;
     display: flex;
-
 }
 
 .searchBar{
@@ -14,29 +13,26 @@
     position: relative;
     background-color: rgb(160, 160, 160);
     border: 1px solid rgb(98, 98, 98);
-    
-    
-    
-
 }
 
+.btn{
+    background-color: rgb(81, 255, 226);
+    color: rgb(248, 239, 239);
+    font-size: 30px;
+    font-style: italic;
+    margin-left: 50px;
+    padding: 18px;
+    border-radius: 20px;
+}
+.btn:hover{
+    background-color: rgb(43, 134, 119);
+    color: rgb(230, 230, 230);
+}
 .logo{
     
     border-radius: 20px;
 }
 .dimension{
-    /* width: 300px; */
     width: 430px;
     margin: 0 auto;
-
 }
-
-/* .logotext{
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    background-color: rgba(5, 184, 184, 0.486);
-    border-radius: 20px;
-    display: flex;
-    
-} */

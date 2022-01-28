@@ -20,7 +20,7 @@ const Card = ({ id, image, date, title, description, index, length, rate }) => {
   }
 
   useEffect(() => {
-    if (count == length) {
+    if (count === length) {
       setPulse(true);
       setCount(0);
     }
@@ -84,15 +84,13 @@ const Card = ({ id, image, date, title, description, index, length, rate }) => {
           variants={fadeInVariant}
           initial="hidden"
           animate={FadeIn ? "fadeIn" : "hidden"}
-        // onAnimationComplete={() => setFadeIn(false)}
         >
-          <img src={path} className="imageFit" />
+          <img src={path} alt="Movie Poster" className="imageFit" />
         </motion.div>
         <div className="content">
-          <p><NavLink to={`movie/${id}`} className="header  details-header words">{title}</NavLink><span className="rating">{rate}</span></p>
+          <p><NavLink exact to={`/movie/${id}`} className="header  details-header words">{title}</NavLink><span className="rating">{rate}</span></p>
           <div className="details">
             <motion.div
-
               variants={pulseVariant}
               animate={Pulse ? "pulse" : "still"}
               onAnimationComplete={() => setPulse(false)}
@@ -117,28 +115,3 @@ export default Card
 
 
 
-        // <div className="ui card" style={{maxWidth:'100%' , minHeight:'100%'}}>
-        //     <div className="content" style={{padding: 0}}>
-        //         <div className="ui items">
-        //             <div className="ui card">
-        //                 <div className="ui large image">
-        //                     <img src="https://picsum.photos/300/300"/>
-        //                 </div>
-        //                 <div className="content" style={{padding:20}}>
-        //                     <a className="header">12 Years a Slave</a>
-        //                     <div className="date">
-        //                         <span className="date">2020-01-05</span>
-        //                     </div>
-        //                     <div className="description">
-        //                         <p>jsdfksfdbajkadasddsfajskdnasxasasxa</p>
-        //                     </div>
-        //                     <div className="extra">
-        //                         <div className="ui label">Action</div>
-
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-
-        // </div>

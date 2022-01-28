@@ -9,13 +9,13 @@ const Header = ({ onSubmit }) => {
     const [term, setTerm] = useState('');
 
     const searchMovies = (searchValue) => {
-        setTerm(searchValue)
+        setTerm(searchValue);
     }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         onSubmit(term);
-        navigate("/")
+        navigate("/");
     }
 
     return (
@@ -23,6 +23,7 @@ const Header = ({ onSubmit }) => {
             <div className="logotext">
                 <NavLink to="/"><img className="header item logo" src={logo} /></NavLink>
             </div>
+            <NavLink to="/popular" className="btn">Trending</NavLink>
             <div className="dimension ">
                 <div className="ui transparent inverted input">
                     <form onSubmit={onFormSubmit} >

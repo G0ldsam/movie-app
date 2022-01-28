@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MovieList from "../MovieList/MovieList";
 import Header from "../Header/Header";
 import "./HomePage.css"
-import themoviedb, { requestSearch } from "../../api/themoviedb"
-import { BrowserRouter as Router, Navigate, Route, Routes, Link, useParams } from "react-router-dom"
+import { requestSearch } from "../../api/themoviedb"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Movie from "../Movie/Movie";
+import Trending from "../Trending/Trending";
 
 const HomePage = () => {
 
@@ -15,10 +16,6 @@ const HomePage = () => {
     setSearchResults(results);
     console.log(results);
   }
-  // useEffect(() => {
-  //   console.log(searchResults);
-
-  // }, [searchResults])
 
   return (
     <Router>
@@ -28,11 +25,11 @@ const HomePage = () => {
         <Routes>
           <Route exact path="/" element={<MovieList list={searchResults} />} />
           <Route exact path="/movie/:id" element={<Movie />} />
+          <Route exact path="/popular" element={<Trending />} />
         </Routes>
       </div>
     </Router>
   );
 }
-{/* <Navigate replace to="/" /> */ }
 export default HomePage;
 
