@@ -4,7 +4,7 @@ import defaultImage from "../../images/default.PNG";
 import { motion } from "framer-motion";
 import { MovieContext } from './../../Contexts/MovieContext';
 import { NavLink } from "react-router-dom";
-import { listVariant, fadeInVariant, pulseVariant } from "./../../styleVariants/variants"
+import { listVariant, fadeInVariant, pulseVariant } from "./variants"
 
 
 const Card = ({ id, image, date, title, description, index, length, rate }) => {
