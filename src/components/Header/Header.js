@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css"
 import { useNavigate } from "react-router-dom";
+import logo from "../../images/movie-logo.png"
 
 const Header = ({ onSubmit }) => {
     let navigate = useNavigate();
@@ -17,10 +18,12 @@ const Header = ({ onSubmit }) => {
     }
 
     return (
-        <div className="ui menuColor ">
-
+        <div className=" menuColor ">
+            <div className="logotext">
+                <img className="header item logo" src={logo} />
+            </div>
             <div className="dimension ">
-                <div className="ui transparent inverted input ">
+                <div className="ui transparent inverted input">
                     <form onSubmit={onFormSubmit} >
                         <i className="search icon"></i>
                         <input
@@ -32,6 +35,7 @@ const Header = ({ onSubmit }) => {
                     </form>
                 </div>
             </div>
+
         </div>
     );
 }

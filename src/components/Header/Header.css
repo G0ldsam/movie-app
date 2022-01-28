@@ -4,6 +4,7 @@
     margin-bottom: 50px;
     align-items: center;
     justify-content: center;
+    display: flex;
 
 }
 
@@ -15,11 +16,27 @@
     border: 1px solid rgb(98, 98, 98);
     
     
+    
 
 }
 
-
+.logo{
+    
+    border-radius: 20px;
+}
 .dimension{
-    width: 300px;
+    /* width: 300px; */
+    width: 430px;
     margin: 0 auto;
+
 }
+
+/* .logotext{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: rgba(5, 184, 184, 0.486);
+    border-radius: 20px;
+    display: flex;
+    
+} */

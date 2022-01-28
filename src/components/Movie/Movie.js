@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { requestMovie } from '../../api/themoviedb';
 import defaultImage from "../../images/default.PNG";
 import './Movie.css'
@@ -10,7 +10,7 @@ const Movie = () => {
   const [movie, setMovie] = useState(null);
   const [path, setPath] = useState(defaultImage);
   const { id } = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     const getMovie = async () => {
       const results = await requestMovie(`${id}`);
@@ -56,6 +56,7 @@ const Movie = () => {
             </div>
           </div>
         </div>}
+      <button className='ui teal button goBack' onClick={() => navigate("/")}>Go Back</button>
     </div>
   );
 }

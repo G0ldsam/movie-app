@@ -46,6 +46,11 @@
   line-height: 1.5em;
 }
 
+.goBack{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 .genres{
   position:absolute;
   bottom: 0;

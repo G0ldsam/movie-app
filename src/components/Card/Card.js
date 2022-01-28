@@ -6,11 +6,10 @@ import { MovieContext } from './../../Contexts/MovieContext';
 import { NavLink } from "react-router-dom";
 
 
-// const path =`https://image.tmdb.org/t/p/w500`+image;
-
 const Card = ({ id, image, date, title, description, index, length }) => {
   const path = image ? `https://image.tmdb.org/t/p/w500` + image : defaultImage;
   const [FadeIn, setFadeIn] = useState(false);
+
 
   const { count, setCount, setPulse, Pulse } = useContext(MovieContext);
 
