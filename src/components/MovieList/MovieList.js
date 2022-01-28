@@ -7,6 +7,7 @@ const MovieList = ({ list }) => {
 
   const [Pulse, setPulse] = useState(false);
   const [count, setCount] = useState(0);
+
   return (
 
     <div
@@ -21,8 +22,8 @@ const MovieList = ({ list }) => {
           index={i}
           length={list.length}
           id={listItem.id}
-        // count={count}
-        // setCount={setCount}
+          rate={listItem.vote_average}
+
         />)}
       </MovieContext.Provider>
     </div>

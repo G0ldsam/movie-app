@@ -49,28 +49,26 @@
     word-spacing: 6px;
 }
 
-/* .image{
-    display: inline-block;
-} */
 .content{
     display: inline-block;
     /* margin: 20px;  */
      padding: 20px;
 } 
 
-/* .zoom:hover{
-    transform: scale(1.5); 
-     border: 3px solid #fdfdfd;
-
-} */
-/* .zoom{
-    transition: transform .3s;
-} */
+.rating{
+    margin-left: 10px;
+    font-size: 40px;
+    color: rgb(0, 197, 197);
+}
 .description{
-    white-space: nowrap;
+    /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 50px;
+  max-height: 90px;
   font-size: 20px;
+  word-wrap: break-word;
+  /* display: -webkit-box; */
+  line-clamp: 3;
+
 }
 

@@ -6,7 +6,7 @@ import { MovieContext } from './../../Contexts/MovieContext';
 import { NavLink } from "react-router-dom";
 
 
-const Card = ({ id, image, date, title, description, index, length }) => {
+const Card = ({ id, image, date, title, description, index, length, rate }) => {
   const path = image ? `https://image.tmdb.org/t/p/w500` + image : defaultImage;
   const [FadeIn, setFadeIn] = useState(false);
 
@@ -89,7 +89,7 @@ const Card = ({ id, image, date, title, description, index, length }) => {
           <img src={path} className="imageFit" />
         </motion.div>
         <div className="content">
-          <p><NavLink to={`movie/${id}`} className="header  details-header words">{title}</NavLink></p>
+          <p><NavLink to={`movie/${id}`} className="header  details-header words">{title}</NavLink><span className="rating">{rate}</span></p>
           <div className="details">
             <motion.div
 

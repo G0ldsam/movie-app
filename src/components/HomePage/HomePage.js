@@ -13,6 +13,7 @@ const HomePage = () => {
     setSearchResults([]);
     const results = await requestSearch(term, 1);
     setSearchResults(results);
+    console.log(results);
   }
   // useEffect(() => {
   //   console.log(searchResults);
